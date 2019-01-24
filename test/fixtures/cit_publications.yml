@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  elib_id: MyString
+  name: MyString
+  source_id: MyString
+  main_author: MyString
+  all_author: MyString
+  periodical_name: MyString
+  periodical_number: MyString
+
+two:
+  elib_id: MyString
+  name: MyString
+  source_id: MyString
+  main_author: MyString
+  all_author: MyString
+  periodical_name: MyString
+  periodical_number: MyString

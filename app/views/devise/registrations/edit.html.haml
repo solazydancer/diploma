@@ -1,0 +1,34 @@
+.body
+  .container#reg_cont
+    %h3 Изменение данных
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = devise_error_messages!
+      %br/
+      .field
+        = f.label 'Адрес электронной почты:'
+        %br/
+        = f.email_field :email, autofocus: true
+      - if devise_mapping.confirmable? and resource.pending_reconfirmation?
+        %div
+          Currently waiting confirmation for: #{resource.unconfirmed_email}
+      %br/
+      .field
+        = f.label 'Текущий пароль:'
+        %br/
+        = f.password_field :current_password, autocomplete: "off"
+      %br/
+      .field
+        = f.label 'Новый пароль:'
+        %i (оставьте поле пустым, если не хотите менять пароль)
+        %br/
+        = f.password_field :password, autocomplete: "off"
+      %br/
+      .field
+        = f.label 'Подтвердите пароль:'
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off"
+      %br/
+      .actions
+        = f.submit 'Изменить'
+      %br/
+      #{button_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete}

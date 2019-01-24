@@ -1,0 +1,52 @@
+= form_for @main_publication do |f|
+  - if @main_publication.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@main_publication.errors.count, "error")} prohibited this main_publication from being saved:"
+      %ul
+        - @main_publication.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :elib_id
+    = f.text_field :elib_id
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :main_author
+    = f.text_field :main_author
+  .field
+    = f.label :author_elib_id
+    = f.text_field :author_elib_id
+  .field
+    = f.label :edu_org
+    = f.text_field :edu_org
+  .field
+    = f.label :period
+    = f.text_field :period
+  .field
+    = f.label :year
+    = f.text_field :year
+  .field
+    = f.label :rinz_cited
+    = f.text_field :rinz_cited
+  .field
+    = f.label :nuc_rinz_cited
+    = f.text_field :nuc_rinz_cited
+  .field
+    = f.label :scopus_cited
+    = f.text_field :scopus_cited
+  .field
+    = f.label :wos_cited
+    = f.text_field :wos_cited
+  .field
+    = f.label :imp_f
+    = f.text_field :imp_f
+  .field
+    = f.label :norm_cit
+    = f.text_field :norm_cit
+  .field
+    = f.label :norm_cit_dir
+    = f.text_field :norm_cit_dir
+  .actions
+    = f.submit 'Save'

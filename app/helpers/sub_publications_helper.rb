@@ -1,0 +1,2 @@
+module SubPublicationsHelper
+end

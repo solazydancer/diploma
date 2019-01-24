@@ -1,0 +1,30 @@
+.body
+  %br/
+  .smth
+    .media-body
+      %h3
+        %i=@pub.name
+      %h4
+        =fa_icon 'male'
+        %i=@pub.all_author
+      %h4
+        =fa_icon 'book'
+        %i=@pub.periodical_name
+        %i=@pub.periodical_number
+    .media-right
+      %br/
+      - if @main.mephi_index == "1"
+        =image_tag 'mephi.png', size: "60x30", style: 'float:right', class: 'media-object'
+      %br/
+      %br/
+      - if @main.rinz_cited != "0"
+        =image_tag 'rinz.png', size: "60x30", style: 'float:right', class: 'media-object'
+      %br/
+      %br/
+      - if @main.nuc_rinz_cited != "0"
+        =image_tag 'nuc.png', size: "90x30", style: 'float:right', class: 'media-object'
+  %br/
+  =render @cit_publications
+  %br/
+  %br/
+  %br/

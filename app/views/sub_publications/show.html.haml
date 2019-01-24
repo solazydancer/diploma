@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Period name:
+  = @sub_publication.period_name
+%p
+  %b Edu org:
+  = @sub_publication.edu_org
+%p
+  %b Number:
+  = @sub_publication.number
+%p
+  %b Year:
+  = @sub_publication.year
+%p
+  %b Pub:
+  = @sub_publication.pub_id
+%p
+  %b Pub name:
+  = @sub_publication.pub_name
+%p
+  %b Pub author:
+  = @sub_publication.pub_author
+%p
+  %b Pub page:
+  = @sub_publication.pub_page
+%p
+  %b Pub cited:
+  = @sub_publication.pub_cited
+
+= link_to 'Edit', edit_sub_publication_path(@sub_publication)
+\|
+= link_to 'Back', sub_publications_path

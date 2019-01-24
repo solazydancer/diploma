@@ -1,0 +1,36 @@
+%nav.navbar.navbar-default.navbar-fixed-top
+  .navbar-header
+    %span.button
+      =button_tag type: 'button', class: 'navbar-toggle collapsed', data: {toggle: 'collapse', target: '#navbar-collapse'} do
+        %span.sr-only Показать/скрыть меню
+        =fa_icon 'bars'
+    %span.mephi.navbar-brand
+      =image_tag 'mephi_logo.png'
+    -# #navbar-collapse.collapse.navbar-collapse
+    -#
+    -#   %ul.nav.navbar-nav
+    -#     %li=link_to 'Авторы', source_people_path
+    -#     %li=link_to 'Публикации', publications_path
+    -#     - if current_user.present? && current_user.role == 1
+    -#       %li= link_to 'Пользователи', all_users_path
+    -#   %ul.nav.navbar-nav.navbar-right
+    -#     - if user_signed_in?
+    -#       %li=link_to('Изменить данные', edit_user_registration_path)
+    -#       %li=link_to('Выход', destroy_user_session_path, :method => :delete)
+    -#       %li
+    -#         %form.navbar-form{:role => "search"}
+    -#           .input-group
+    -#             %input#srch-term.form-control{:name => "srch-term", :placeholder => "Поиск", :type => "text"}
+    -#               .input-group-btn
+    -#                 %button.btn.btn-default{:type => "submit"}
+    -#                   %i.glyphicon.glyphicon-search
+    -#     - else
+    -#       %li=link_to('Войти в систему', new_user_session_path)
+    -#       %li=link_to('Регистрация', new_user_registration_path)
+    -#       %li
+    -#         %form.navbar-form{:role => "search"}
+    -#           .input-group
+    -#             %input#srch-term.form-control{:name => "srch-term", :placeholder => "Поиск", :type => "text"}
+    -#               .input-group-btn
+    -#                 %button.btn.btn-default{:type => "submit"}
+    -#                   %i.glyphicon.glyphicon-search

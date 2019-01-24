@@ -1,0 +1,45 @@
+%table
+  %thead
+    %tr
+      %th Идентификатор в системе РИНЦ
+      %th Название статьи
+      %th Основной автор
+      %th Идентификатор автора в системе РИНЦ
+      %th Название обр.организации
+      %th Название периодического издания
+      %th Год
+      %th Кол-во цитирований в РИНЦ
+      %th Кол-во цитирований в ядре РИНЦ
+      %th Кол-во цитирований в системе Scopus
+      %th Кол-во цитирований в системе Web of Science
+      %th Импакт-фактор журнала
+      %th Кол-во норм.цитирований
+      %th Кол-во норм.цитирований по направлению
+      %th
+      %th
+      %th
+
+  %tbody
+    - @main_publications.each do |main_publication|
+      %tr
+        %td= main_publication.elib_id
+        %td= main_publication.name
+        %td= main_publication.main_author
+        %td= main_publication.author_elib_id
+        %td= main_publication.edu_org
+        %td= main_publication.period
+        %td= main_publication.year
+        %td= main_publication.rinz_cited
+        %td= main_publication.nuc_rinz_cited
+        %td= main_publication.scopus_cited
+        %td= main_publication.wos_cited
+        %td= main_publication.imp_f
+        %td= main_publication.norm_cit
+        %td= main_publication.norm_cit_dir
+        / %td= link_to 'Show', main_publication
+        / %td= link_to 'Edit', edit_main_publication_path(main_publication)
+        / %td= link_to 'Destroy', main_publication, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+/ = link_to 'New Main publication', new_main_publication_path

@@ -1,0 +1,48 @@
+// Place all the styles related to the sub_publications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#sub_cont {
+	background: white;
+	width: 80%;
+	margin-top: 1%;
+	color: #2F4F4F;
+	border: 1px solid #2F4F4F;
+	border-radius: 20px;
+	.sub_name {
+		border-bottom: 1px solid #2F4F4F;
+		text-align: center;
+	}
+	.sub_sub_name {
+		text-align: center;
+	}
+  .links {
+    border-top: 1px solid #2F4F4F;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+	a {
+		color: #B8860B;
+	}
+}
+.media-body {
+		padding-left: 20px;
+}
+
+.page_a {
+	padding-left: 140px;
+}
+#sub_table td{
+	padding: 10px;
+	border-bottom: 1px solid #2F4F4F;
+}
+#sub_table td:first-child{
+	border-right: 1px solid #2F4F4F;
+}
+#sub_thead th {
+	background: #008080;
+	color: white;
+	text-align: center;
+}
+#sub_tbody {
+	text-align: justify;
+}

@@ -1,0 +1,27 @@
+.body
+  .well#person_well
+    %p
+      %b Фамилия:
+      = @source_person.last_name
+    %p
+      %b Имя:
+      = @source_person.first_name
+    %p
+      %b Отчество:
+      = @source_person.second_name
+    %p
+      %b Идентификатор в системе НИЯУ МИФИ:
+      = @source_person.mephi_id
+    %p
+      %b Идентификатор в системе РИНЦ:
+      = @source_person.elib_id
+    %p
+      %b Общее количество статей:
+      = @source_person.global_count
+    %p
+      %b Количество статей МИФИ + РИНЦ:
+      = @source_person.count
+
+/ = link_to 'Edit', edit_source_person_path(@source_person)
+/ \|
+/ = link_to 'Back', source_people_path

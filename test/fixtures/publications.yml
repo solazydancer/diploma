@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  elib_id: 1
+  name: MyString
+  main_author: MyString
+  all_authors: MyString
+  periodical_name: MyString
+
+two:
+  elib_id: 1
+  name: MyString
+  main_author: MyString
+  all_authors: MyString
+  periodical_name: MyString

@@ -1,0 +1,44 @@
+.container#pub_cont
+  .media-body
+    .fio
+      %h4
+        %i= publication.name
+        &nbsp;
+        %a{:href => special_publication_path(:some_id => publication.id)}
+          %i.fa.fa-arrow-circle-right.fa-1x
+    %h5
+      =fa_icon 'info'
+      Идентификатор в системе РИНЦ:
+      %i=publication.elib_id
+    %h5
+      =fa_icon 'male'
+      Авторы:
+      %i=publication.all_author
+    %h5
+      =fa_icon 'book'
+      Периодическое издание:
+      %i=publication.periodical_name
+      - if publication.periodical_number.present?
+        %i=publication.periodical_number
+      &nbsp;
+      - if SubPublication.where(:period_id =>publication.periodical_id).first.present?
+        %a{:href => subs_path(:some_id => publication.periodical_id)}
+          %i.fa.fa-arrow-circle-right.fa-1x
+    %h5
+      - if publication.number != 0
+        =fa_icon 'thumb-tack'
+        Количество цитирований:
+        = link_to publication.number, citations_path(:some_id => publication.elib_id)
+    - if current_user.present? && (current_user.role == 1 || current_user.role == 2)
+      .links
+        =link_to 'Показать', publication
+        &nbsp;&nbsp;&nbsp;
+        =link_to 'Изменить', edit_publication_path(publication)
+  .media-right
+    %br/
+    - if publication.index == '1'
+      =image_tag 'mephi.png', size: "60x30", style: 'float:right', class: 'media-object'
+    %br/
+    %br/
+    - if publication.number != 0
+      =image_tag 'cit.png', size: "110x30", style: 'float:right', class: 'media-object'

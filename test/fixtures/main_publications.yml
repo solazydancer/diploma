@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  elib_id: MyString
+  name: MyString
+  main_author: MyString
+  author_elib_id: MyString
+  edu_org: MyString
+  period: MyString
+  year: MyString
+  rinz_cited: MyString
+  nuc_rinz_cited: MyString
+  scopus_cited: MyString
+  wos_cited: MyString
+  imp_f: MyString
+  norm_cit: MyString
+  norm_cit_dir: MyString
+
+two:
+  elib_id: MyString
+  name: MyString
+  main_author: MyString
+  author_elib_id: MyString
+  edu_org: MyString
+  period: MyString
+  year: MyString
+  rinz_cited: MyString
+  nuc_rinz_cited: MyString
+  scopus_cited: MyString
+  wos_cited: MyString
+  imp_f: MyString
+  norm_cit: MyString
+  norm_cit_dir: MyString

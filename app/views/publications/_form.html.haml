@@ -1,0 +1,52 @@
+.body
+  .well#person_well
+    = form_for @publication do |f|
+      - if @publication.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@publication.errors.count, "error")} prohibited this publication from being saved:"
+          %ul
+            - @publication.errors.full_messages.each do |msg|
+              %li= msg
+
+      .field
+        = f.label 'Идентификатор статьи в системе РИНЦ:'
+        %br/
+        = f.number_field :elib_id
+      %br/
+      .field
+        = f.label 'Название статьи:'
+        %br/
+        = f.text_field :name
+      %br/
+      .field
+        = f.label 'Основной автор:'
+        %br/
+        = f.text_field :main_author
+      %br/
+      .field
+        = f.label 'Все авторы:'
+        %br/
+        = f.text_field :all_author
+      %br/
+      .field
+        = f.label 'Название журнала:'
+        %br/
+        = f.text_field :periodical_name
+      %br/
+      .field
+        = f.label 'Номер журнала:'
+        %br/
+        = f.text_field :periodical_number
+      %br/
+      .field
+        = f.label 'Связь публикации и НИЯУ МИФИ:'
+        %br/
+        = f.text_field :index
+      %br/
+      .field
+        = f.label 'Кол-во цитирований:'
+        %br/
+        = f.text_field :number
+      %br/
+      .actions
+        = f.submit 'Save'

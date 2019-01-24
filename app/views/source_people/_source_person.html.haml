@@ -1,0 +1,56 @@
+.container#per_cont
+  .media
+    .media-left
+      %br/
+      =image_tag 'man.jpg', size: "110x125", class: 'media-object';
+    .media-body
+      .fio
+        %h3
+          %i=source_person.last_name
+          %i=source_person.first_name
+          %i=source_person.second_name
+          - if source_person.last_name == 'Иванов'
+            %a{:href => ''}
+              %i.fa.fa-arrow-circle-right.fa-1x
+      %h5
+        =fa_icon 'info'
+        Идентификатор в системе НИЯУ МИФИ:
+        %i=source_person.mephi_id
+      %h5
+        =fa_icon 'info'
+        Идентификатор в системе РИНЦ:
+        - if source_person.elib_id.present?
+          %i=source_person.elib_id
+        - else
+          %t -
+      %h5
+        =fa_icon 'pencil-square-o'
+        Общее количество статей:
+        - if source_person.global_count != 0
+          %i=link_to source_person.global_count, authors_publications_path(:some_id => source_person.mephi_id)
+        - else
+          %i=source_person.global_count
+        &nbsp;&nbsp;&nbsp;Из них в МИФИ:
+        - if source_person.count != 0
+          %i= link_to source_person.count, index_publications_path(:some_id => source_person.mephi_id)
+        - else
+          %i=source_person.count
+      - if current_user.present? && (current_user.role == 1 || current_user.role == 2)
+        .links
+          =link_to 'Показать', source_person
+          &nbsp;&nbsp;&nbsp;
+          =link_to 'Изменить', edit_source_person_path(source_person)
+          &nbsp;&nbsp;&nbsp;
+          =link_to 'Удалить', source_person, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .media-right
+      %br/
+      - if source_person.mephi_id.present?
+        =image_tag 'mephi.png', size: "60x30", style: 'float:right', class: 'media-object'
+      %br/
+      %br/
+      - if source_person.elib_id.present?
+        =image_tag 'rinz.png', size: "60x30", style: 'float:right', class: 'media-object'
+      %br/
+      %br/
+      - if source_person.last_name == "Иванов"
+        =image_tag 'need.png', size: "170x30", style: 'float:right', class: 'media-object'

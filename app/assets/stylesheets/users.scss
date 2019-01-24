@@ -1,0 +1,35 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#user_cont {
+	background: white;
+	width: 50%;
+	margin-top: 1%;
+	color: #2F4F4F;
+	border: 1px solid #2F4F4F;
+	border-radius: 20px;
+	.fio {
+		border-bottom: 1px solid #2F4F4F;
+	}
+  .links {
+    border-top: 1px solid #2F4F4F;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+	a {
+		color: #B8860B;
+	}
+}
+.media-body {
+		padding-left: 20px;
+}
+
+.page {
+	padding-left: 360px;
+}
+.media-body {
+		padding-left: 20px;
+}
+.special {
+	color: #800000;
+}

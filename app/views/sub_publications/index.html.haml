@@ -1,0 +1,29 @@
+.body
+  %br/
+  .container#sub_cont
+    .sub_name
+      %h3
+        %i=@period.period_name
+        %i №
+        %i=@period.number
+    .sub_sub_name
+      %h5
+        %i=@period.edu_org
+        %i=@period.year
+    %br/
+    %table#sub_table
+      %thead#sub_thead
+        %tr
+          %th
+            %h4
+              =fa_icon 'book'
+              Название статьи
+          %th
+            %h4
+              =fa_icon 'male'
+              Авторы
+      %tbody#sub_tbody
+        - @sub_publications.each do |sub_publication|
+          %tr
+            %td= sub_publication.pub_name
+            %td= sub_publication.pub_author

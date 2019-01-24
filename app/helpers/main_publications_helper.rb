@@ -1,0 +1,2 @@
+module MainPublicationsHelper
+end

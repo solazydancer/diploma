@@ -1,0 +1,31 @@
+= form_for @cit_publication do |f|
+  - if @cit_publication.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@cit_publication.errors.count, "error")} prohibited this cit_publication from being saved:"
+      %ul
+        - @cit_publication.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :elib_id
+    = f.text_field :elib_id
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :source_id
+    = f.text_field :source_id
+  .field
+    = f.label :main_author
+    = f.text_field :main_author
+  .field
+    = f.label :all_author
+    = f.text_field :all_author
+  .field
+    = f.label :periodical_name
+    = f.text_field :periodical_name
+  .field
+    = f.label :periodical_number
+    = f.text_field :periodical_number
+  .actions
+    = f.submit 'Save'

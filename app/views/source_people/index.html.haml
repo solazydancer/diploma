@@ -1,0 +1,8 @@
+.body
+  %br/
+  - if current_user.present? && (current_user.role == 1 || current_user.role == 2)
+    .page_a
+      =link_to '', class: 'btn btn-warning' do
+        =fa_icon 'plus'
+        Добавить сотрудника
+  =render @source_people

@@ -1,0 +1,40 @@
+.body
+  %br/
+  .container#reg_cont
+    .fio
+      %h3
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Регистрация
+        =image_tag 'email.png', size: "60x30", style: 'float:right', class: 'media-object'
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      %br/
+      .field
+        .form-group
+          .input-group.input-group-md
+            %span.input-group-addon.px50
+              %i.fa.fa-user
+            %i
+              = text_field_tag :email, '', class: 'form-control', placeholder: 'Адрес электронной почты'
+      %br/
+      .field
+        .form-group
+          .input-group.input-group-md
+            %span.input-group-addon.px50
+              %i.fa.fa-key
+            %i
+              = text_field_tag :email, '', class: 'form-control', placeholder: 'Пароль (минимум 6 знаков)'
+        %br/
+      .field
+        .form-group
+          .input-group.input-group-md
+            %span.input-group-addon.px50
+              %i.fa.fa-key
+            %i
+              = text_field_tag :email, '', class: 'form-control', placeholder: 'Подтвердите пароль'
+        %br/
+      .actions
+        =link_to '', class: 'btn btn-warning' do
+          =fa_icon 'check'
+          Зарегистрироваться
+      %br/
+  %br/

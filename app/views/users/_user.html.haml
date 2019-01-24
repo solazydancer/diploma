@@ -1,0 +1,25 @@
+.container#user_cont
+  .media-body
+    %h5
+      =fa_icon 'paper-plane'
+      %i=user.email
+    %h5
+      - if user.role == 0
+        =fa_icon 'male'
+        %i Пользователь
+      - if user.role == 1
+        .special
+          =fa_icon 'male'
+          %i Администратор
+      - if user.role == 2
+        .special
+          =fa_icon 'male'
+          %i Модератор
+    .links
+      =link_to 'Удалить'
+  .media-right
+    %br/
+    - if user.email.present?
+      =image_tag 'email.png', size: "60x30", style: 'float:right', class: 'media-object'
+    - else
+      =image_tag 'CAS.png', size: "60x30", style: 'float:right', class: 'media-object'

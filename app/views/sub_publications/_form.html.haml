@@ -1,0 +1,37 @@
+= form_for @sub_publication do |f|
+  - if @sub_publication.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@sub_publication.errors.count, "error")} prohibited this sub_publication from being saved:"
+      %ul
+        - @sub_publication.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :period_name
+    = f.text_field :period_name
+  .field
+    = f.label :edu_org
+    = f.text_field :edu_org
+  .field
+    = f.label :number
+    = f.text_field :number
+  .field
+    = f.label :year
+    = f.text_field :year
+  .field
+    = f.label :pub_id
+    = f.text_field :pub_id
+  .field
+    = f.label :pub_name
+    = f.text_field :pub_name
+  .field
+    = f.label :pub_author
+    = f.text_field :pub_author
+  .field
+    = f.label :pub_page
+    = f.text_field :pub_page
+  .field
+    = f.label :pub_cited
+    = f.text_field :pub_cited
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,20 @@
+.body
+  %br/
+  .page
+    =link_to '', class: 'btn btn-warning' do
+      =fa_icon 'plus'
+      Добавить пользователя
+  =render @users
+  .container#user_cont
+    .media-body
+      %h5
+        =fa_icon 'paper-plane'
+        %i SDI002
+      %h5
+        =fa_icon 'male'
+        %i Пользователь
+      .links
+        =link_to 'Удалить'
+    .media-right
+      %br/
+      =image_tag 'CAS.png', size: "60x30", style: 'float:right', class: 'media-object'

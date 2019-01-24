@@ -1,0 +1,17 @@
+.container#pub_cont
+  .media-body
+    .fio
+      %h4
+        %i= cit_publication.name
+    %h5
+      =fa_icon 'info'
+      Идентификатор в системе РИНЦ:
+      %i=cit_publication.elib_id
+    %h5
+      =fa_icon 'male'
+      Авторы:
+      %i=cit_publication.all_author
+    %h5
+      =fa_icon 'book'
+      Периодическое издание:
+      %i=cit_publication.periodical_name

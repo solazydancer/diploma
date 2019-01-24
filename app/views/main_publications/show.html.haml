@@ -1,0 +1,86 @@
+.body
+  %br/
+  .container#main_pub
+    .media-body
+      .fio
+        %h4
+          %i= @main_publication.name
+      %h5
+        =fa_icon 'info'
+        Идентификатор статьи в системе РИНЦ:
+        %i=@main_publication.elib_id
+      %h5
+        =fa_icon 'male'
+        Основной автор:
+        - if @main_publication.main_author.present?
+          %i=@main_publication.main_author
+        - else
+          %t -
+      %h5
+        =fa_icon 'book'
+        Название периодического издания:
+        -if @main_publication.period.present?
+          %i=@main_publication.period
+        - else
+          %t -
+      %h5
+        =fa_icon 'building'
+        Образовательное учреждение:
+        - if @main_publication.edu_org.present?
+          %i=@main_publication.edu_org
+        - else
+          %t -
+      .cited_about
+        %h5
+          =fa_icon 'pencil-square-o'
+          Количество цитирований
+        %h5
+          В РИНЦ:
+          %i=@main_publication.rinz_cited
+          &nbsp;&nbsp;&nbsp; &nbsp;В ядре РИНЦ:
+          %i=@main_publication.nuc_rinz_cited
+        %h5
+          В Scopus:
+          %i=@main_publication.scopus_cited
+          &nbsp;&nbsp;&nbsp;В Web of Science:
+          %i=@main_publication.wos_cited
+      .cited_about
+        %h5
+          =fa_icon 'newspaper-o'
+          Импакт-фактор журнала:
+          - if @main_publication.imp_f.present?
+            %i=@main_publication.imp_f
+          - else
+            %t -
+        %h5
+          =fa_icon 'thumb-tack'
+          Норм.цитирование:
+          - if @main_publication.norm_cit.present?
+            %i=@main_publication.norm_cit
+          - else
+            %t -
+        %h5
+          =fa_icon 'thumb-tack'
+          Норм.цитирование по направлению:
+          - if @main_publication.norm_cit_dir.present?
+            %i=@main_publication.norm_cit_dir
+          - else
+            %t -
+    .media-right
+      %br/
+      - if @main_publication.mephi_index == "1"
+        =image_tag 'mephi.png', size: "60x30", style: 'float:right', class: 'media-object'
+      %br/
+      %br/
+      - if @main_publication.rinz_cited != "0"
+        =image_tag 'rinz.png', size: "60x30", style: 'float:right', class: 'media-object'
+      %br/
+      %br/
+      - if @main_publication.nuc_rinz_cited != "0"
+        =image_tag 'nuc.png', size: "90x30", style: 'float:right', class: 'media-object'
+  %br/
+  %br/
+
+  / = link_to 'Edit', edit_main_publication_path(@main_publication)
+  / \|
+  / = link_to 'Back', main_publications_path

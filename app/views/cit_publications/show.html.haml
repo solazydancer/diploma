@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Elib:
+  = @cit_publication.elib_id
+%p
+  %b Name:
+  = @cit_publication.name
+%p
+  %b Source:
+  = @cit_publication.source_id
+%p
+  %b Main author:
+  = @cit_publication.main_author
+%p
+  %b All author:
+  = @cit_publication.all_author
+%p
+  %b Periodical name:
+  = @cit_publication.periodical_name
+%p
+  %b Periodical number:
+  = @cit_publication.periodical_number
+
+= link_to 'Edit', edit_cit_publication_path(@cit_publication)
+\|
+= link_to 'Back', cit_publications_path

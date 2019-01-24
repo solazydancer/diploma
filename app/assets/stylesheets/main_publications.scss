@@ -1,0 +1,37 @@
+// Place all the styles related to the main_publications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#main_body {
+	background-color: #F5F5F5;
+	margin-top: 5%;
+}
+
+#main_pub {
+	background: white;
+	margin-top: 3%;
+	width: 80%;
+	color: #2F4F4F;
+	border: 1px solid #2F4F4F;
+	border-radius: 20px;
+	.fio {
+		border-bottom: 1px solid #2F4F4F;
+	}
+  .links {
+    border-top: 1px solid #2F4F4F;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+	.special_link {
+		color: #2F4F4F;
+	}
+	a {
+		color: #B8860B;
+	}
+}
+.media-body {
+		padding-left: 20px;
+}
+.cited_about {
+	border-top: 1px solid #2F4F4F;
+	color: #2F4F4F;
+}

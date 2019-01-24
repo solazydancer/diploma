@@ -1,0 +1,35 @@
+.body
+  .well#person_well    
+    %p#notice= notice
+
+    %p
+      %b Идентификатор статьи в системе РИНЦ:
+      = @publication.elib_id
+    %p
+      %b Название статьи:
+      = @publication.name
+    %p
+      %b Основной автор:
+      = @publication.main_author
+    %p
+      %b Все авторы:
+      = @publication.all_author
+    %p
+      %b Название журнала:
+      = @publication.periodical_name
+    %p
+      %b Номер журнала:
+      = @publication.periodical_number
+    %p
+      %b Связь публикации и НИЯУ МИФИ:
+      - if @publication.index == '1'
+        Да
+      - else 
+        Нет
+    %p
+      %b Кол-во цитирований:
+      = @publication.number
+
+/ = link_to 'Edit', edit_publication_path(@publication)
+/ \|
+/ = link_to 'Back', publications_path
